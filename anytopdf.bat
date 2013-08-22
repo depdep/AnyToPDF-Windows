@@ -1,8 +1,9 @@
 @ECHO OFF
 
 REM AnyToPDF Windows Batch Version
-REM converted from https://code.google.com/p/anytopdf/
-REM denny_depok@yahoo.com
+REM https://github.com/depdep/AnyToPDF-Windows
+REM (converted from https://code.google.com/p/anytopdf/)
+REM depdep.coder@gmail.com
 
 SET VERSION=1.0
 
@@ -84,7 +85,7 @@ REM run open office with macro
 GOTO END
 
 :USAGE
-ECHO AnyToPDF v%VERSION% (LGPL)
+ECHO AnyToPDF v%VERSION%
 ECHO converts arbitrary documents to PDF format using openoffice.org v3 macros.
 ECHO https://github.com/depdep/AnyToPDF-Windows
 ECHO.
