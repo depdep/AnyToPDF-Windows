@@ -2,7 +2,7 @@
 
 REM AnyToPDF Windows Batch Version
 REM converted from https://code.google.com/p/anytopdf/
-REM depdep.coder@gmail.com
+REM denny_depok@yahoo.com
 
 SET VERSION=1.0
 
@@ -21,8 +21,12 @@ IF NOT EXIST "%1" (
 REM check if Open Office 3 installed
 SET exe=%ProgramFiles(x86)%\OpenOffice.org 3\program\soffice.exe
 IF NOT EXIST "%exe%" (
-	ECHO Open Office 3 NotFound
-	GOTO END
+	REM 32 bit
+	SET exe=%ProgramFiles%\OpenOffice.org 3\program\soffice.exe
+	IF NOT EXIST "%exe%" (
+		ECHO Open Office 3 NotFound
+		GOTO END
+	)
 )
 
 REM check if AnyToPDF.xba exist
