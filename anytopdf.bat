@@ -82,7 +82,7 @@ GOTO END
 :USAGE
 ECHO AnyToPDF v%VERSION% (LGPL)
 ECHO converts arbitrary documents to PDF format using openoffice.org v3 macros.
-ECHO http://code.google.com/p/anytopdf
+ECHO https://github.com/depdep/AnyToPDF-Windows
 ECHO.
 ECHO Usage: anytopdf.bat [infile] [outfile]
 ECHO.
