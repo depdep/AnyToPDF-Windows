@@ -14,7 +14,8 @@ OpenOffice ver 3+
 Instalation
 ===========
 
-Just copy anytopdf.bat to folder
+Just copy anytopdf.bat to folder and run the batch file. 
+AnyToPDF will automaticalliy create required macro function if the macro is not found
 
 
 Usage
