@@ -8,10 +8,8 @@ REM depdep.coder@gmail.com
 SET VERSION=1.0
 
 REM check parameter
-IF [%1]==[] GOTO USAGE
 IF [%2]==[] GOTO USAGE
-IF "%1"=="help" GOTO USAGE
-IF "%1"=="-h" GOTO USAGE
+IF [%1]==[] GOTO USAGE
 
 REM check if input file exit
 IF NOT EXIST "%1" (
@@ -20,10 +18,10 @@ IF NOT EXIST "%1" (
 )
 
 REM check if Open Office 3 installed
-SET exe=%ProgramFiles(x86)%\OpenOffice.org 3\program\soffice.exe
+SET exe=%ProgramFiles%\OpenOffice.org 3\program\soffice.exe
 IF NOT EXIST "%exe%" (
-	REM 32 bit
-	SET exe=%ProgramFiles%\OpenOffice.org 3\program\soffice.exe
+	REM 64 bit Windows
+	SET exe=%ProgramFiles(x86)%\OpenOffice.org 3\program\soffice.exe
 	IF NOT EXIST "%exe%" (
 		ECHO Open Office 3 NotFound
 		GOTO END
@@ -32,7 +30,6 @@ IF NOT EXIST "%exe%" (
 
 REM check if AnyToPDF.xba exist
 SET xba=%APPDATA%\OpenOffice.org\3\user\basic\Standard\AnyToPDF.xba
-
 IF NOT EXIST "%xba%" (
 	ECHO Macro file not found, will attempt to create
 	REM create macro
@@ -87,6 +84,7 @@ GOTO END
 :USAGE
 ECHO AnyToPDF v%VERSION%
 ECHO converts arbitrary documents to PDF format using openoffice.org v3 macros.
+ECHO (converted from https://code.google.com/p/anytopdf/)
 ECHO https://github.com/depdep/AnyToPDF-Windows
 ECHO.
 ECHO Usage: anytopdf.bat [infile] [outfile]
